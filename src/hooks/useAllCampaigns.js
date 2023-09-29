@@ -42,7 +42,7 @@ const useAllCampaigns = () => {
                         durationTime: Number(details.durationTime),
                         isActive: details.isActive,
                         fundingBalance: details.fundingBalance,
-                        contributors: campaignContributors[0],
+                        contributors: campaignContributors[index],
                     })
                 );
 
