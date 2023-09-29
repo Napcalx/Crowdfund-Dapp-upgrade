@@ -37,15 +37,18 @@ const CreateCampaign = () => {
             const receipt = await tx.wait();
             if (receipt.status === 0) return alert("tx failed");
 
+            closeModal()
             alert("campaign created!!");
         } catch (error) {
             console.log("error: ", error);
             if (error.info.error.code === 4001) {
                 return alert("You rejected the request");
             }
+            closeModal()
             alert("something went wrong");
         } finally {
             setSendingTx(false);
+            closeModal()
         }
     };
     return (
